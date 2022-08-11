@@ -1,0 +1,580 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <title>@ViewBag.Title - WMS</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/assets/images/favicon.ico" />
+    <link rel="stylesheet" href="~/Content/assets/css/backend-plugin.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/backend.css?v=1.0.0">
+    <link rel="stylesheet" href="~/Content/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendor/remixicon/fonts/remixicon.css">
+</head>
+<body class="  ">
+
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+
+        <div class="iq-sidebar  sidebar-default ">
+            <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
+                <a href="#" class="header-logo">
+                    <img src="../assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">WMS</h5>
+                </a>
+            </div>
+            <div class="data-scrollbar" data-scroll="1">
+                <nav class="iq-sidebar-menu">
+                    <ul id="iq-sidebar-toggle" class="iq-menu">
+                        <li class="active">
+                            <a href="../backend/index.html" class="svg-icon">
+                                <svg class="svg-icon" id="p-dash1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                                <span class="ml-4">Dashboards</span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="#INBOUND" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                <svg class="svg-icon" id="p-dash2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                                <span class="ml-4">INBOUND</span>
+                                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="10 15 15 20 20 15"></polyline>
+                                    <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                                </svg>
+                            </a>
+                            <ul id="INBOUND" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">
+                                    @Html.ActionLink("PURCHASE ORDER", "PurchaseOrder", "Inbound")
+                                </li>
+                                <li class=""> 
+                                    @Html.ActionLink("ASN/RECEIPT", "ASN_RECEIPT", "Inbound") 
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("TASK DETAIL", "TASKDETAIL", "Inbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INBOUND REPORT", "INBOUNDREPORT", "Inbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INBOUND REPORT SUMMARY", "INBOUNDREPORTSUMMARY", "Inbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("ONE VIEW RECEIPT", "ONEVIEWRECEIPT", "Inbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("RECEIPT CFS", "RECEIPTCFS", "Inbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PALLETIZATION", "PALLETIZATION", "Inbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("DECLARATION", "DECLARATION", "Inbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("RECEIVINGPLAN", "RECEIVINGPLAN", "Inbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PO TRACKING", "POTRACKING", "Inbound")
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" ">
+                            <a href="#OUTBOUND" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                <svg class="svg-icon" id="p-dash3" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span class="ml-4">OUTBOUD</span>
+                                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="10 15 15 20 20 15"></polyline>
+                                    <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                                </svg>
+                            </a>
+                            <ul id="OUTBOUND" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">
+                                    @Html.ActionLink("MASTER PICK", "MASTERPICK", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SHIPMENT ORDER", "SHIPMENTORDER", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PICK DETAIL", "PICKDETAIL", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PICK DETAIL BY MATERPICK", "PICKDETAILBYMASTERPICK", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("OUTBOUND REPORT", "OUTBOUNDREPORT", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("OUTBOUND REPORT SUMMARY", "OUTBOUNDREPORTSUMMARY", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("BOOKING", "BOOKING", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("COINTAINER MANAGEMENT", "CONTAINERMANAGEMENT", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("BOOKING CARRIER", "BOOKINGCARRIER", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("ONE VIEW SO", "ONEVIEWSO", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SALE ORDER", "SALEORDER", "Outbound")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SALE ORDER TRACKING", "SALEORDERTRACKING", "Outbound")
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class=" ">
+                            <a href="#INVENTORY" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                <svg class="svg-icon" id="p-dash4" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                    <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                                </svg>
+                                <span class="ml-4">INVENTORY</span>
+                                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="10 15 15 20 20 15"></polyline>
+                                    <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                                </svg>
+                            </a>
+                            <ul id="INVENTORY" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">
+                                    @Html.ActionLink("INVENTORY LIST", "INVENTORYLIST", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INVENTORY LIST CFS", "INVENTORYLISTCFS", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INVENTORY LIST CBM", "INVENTORYLISTCBM", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INVENTORY WARNING", "INVENTORYWARNING", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INVENTORY REPORT", "INVENTORYREPORT", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INVENTORY HOLD LIST", "INVENTORYHOLDLIST", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("MOVE", "MOVE", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("ADJUSTMENT", "ADJUSTMENT", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CHANGE STATUS", "CHANGESTATUS", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CHANGE LOT", "CHANGELOT", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("TRANSACTION", "TRANSACTION", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("STOCK COUT", "STOCKCOUT", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("POST STOCK", "POSTSTOCK", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PREMOVE", "PREMOVE", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INTERNAL TRANSFER", "INTERNALTRANSFER", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("DETAIL STORAGE", "DETAILSTORAGE", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("REPLENISHMENT", "REPLENISHMENT", "Inventory")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INVENTORY SUMMARY", "INVENTORYSUMMARY", "Inventory")
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" ">
+                            <a href="#dock" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                <svg class="svg-icon" id="p-dash6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg>
+                                <span class="ml-4">DOCK SCHEDULING</span>
+                                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="10 15 15 20 20 15"></polyline>
+                                    <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                                </svg>
+                            </a>
+                            <ul id="dock" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">
+                                    @Html.ActionLink("CHECK IN", "CHECKIN", "Dockscheduling")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("APPOINTMENT", "APPOINMENT", "Dockscheduling")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("DOCK MANAGEMENT", "DOCKMANAGEMENT", "Dockscheduling")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("TRUCK DCLATATION", "TRUCKDCLATATION", "Dockscheduling")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("TRUCK MANAGEMENT", "TRUCKMANAGEMENT", "Dockscheduling")
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class=" ">
+                            <a href="#CONFIGURATION" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                <svg class="svg-icon" id="p-dash6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="4 14 10 14 10 20"></polyline>
+                                    <polyline points="20 10 14 10 14 4"></polyline>
+                                    <line x1="14" y1="10" x2="21" y2="3"></line>
+                                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                                </svg>
+                                <span class="ml-4">CONFIGURATION</span>
+                                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="10 15 15 20 20 15"></polyline>
+                                    <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                                </svg>
+                            </a>
+                            <ul id="CONFIGURATION" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">
+                                    @Html.ActionLink("CUSTOMER GROUP", "CUSTOMERGROUP", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CUSTOMER", "CUSTOMER", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("DESTINATION", "DESTINATION", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SHIP & DESTINATION", "SHIP_DESTINATION", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PACK", "PACK", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("LOCATION", "LOCATION", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("ZONE", "ZONE", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CARRIER", "CARRIER", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("LINE", "LINE", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SUPPLIER", "SUPPLIER", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("NOTIFY PARTY", "NOTIFYPARTY", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("ALLOCATE", "ALLOCATE", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PUT AWAY", "PUT AWAY", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("REPLENISHMENT", "REPLENISHMENT", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SYSTEM CODE", "SYSTEMCODE", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("ITEM", "ITEM", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("VALIDATION LIST", "VALIDATIONLIST", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("DOCK", "DOCK", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("VESSEL", "VESSEL", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PORTS", "PORTS", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SHIPPINGLINE", "SHIPPINGLINE", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("REPLENISHMENTSKU", "REPLENISHMENTSKU", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("ALTSKU", "ALTSKU", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("GROUPSKU", "GROUPSKU", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("FACTORY LIFE", "FACTORYLIFE", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PICK STRATEGY", "PICKSTRATEGY", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CONT/SEAL", "CONT_SEAL", "Configuration")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SKU DETAIL", "SKUDETAIL", "Configuration")
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" ">
+                            <a href="#IMFORMATION" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                <svg class="svg-icon" id="p-dash8" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <span class="ml-4">IMFORMATION</span>
+                                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="10 15 15 20 20 15"></polyline>
+                                    <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                                </svg>
+                            </a>
+                            <ul id="IMFORMATION" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">
+                                    @Html.ActionLink("INDEX ON FACTORY", "INDEXONFACTORY", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INDEX ON GROUP", "INDEXONGROUP", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INDEX ON VRSSEL", "INDEXONVESSEL", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INDEX ON PORT", "INDEXONPORT", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("INDEX ON DESTINATION", "INDEXONDESTINATION", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SHIP TO NUMBER", "SHIPTONUMBER", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("TOTAL DAILY REPORT", "TOTALDAILYREPORT", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PHYSICAL CHECK", "PHYSICALCHECK", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PRINT CONTAINER", "PRINTCONTAINER", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("BROWSE CONTAINER LIST", "BROWSECONTAINERLIST", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("UPDATE VESSEL SEAL", "UPDATEVESSELSEAL", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("LIQUIDATION SUGGUEST", "LIQUIDATIONSUGGUEST", "Information")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CONT GATE OUT WH5", "CONTGATEOUTWH5", "Information")
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="#IM-EXPORT" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                <svg class="svg-icon" id="p-dash8" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <span class="ml-4">IM-EXPORT</span>
+                                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="10 15 15 20 20 15"></polyline>
+                                    <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                                </svg>
+                            </a>
+                            <ul id="IM-EXPORT" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">
+                                    @Html.ActionLink("RECEIVING CARGO NIKE", "RECEIVINGCARGONIKE", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("RECEIVING CARGO GAP", "RECEIVINGCARGOGAP", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("RECEIVING CAARGO DEICHMANN", "RECEIVINGCARGODEICHMANN", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("RECEIVING CAARGO CFS", "RECEIVINGCARGOCFS", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("BROWSE RECEIVING DOCUMENT", "BROWSERECEIVINGDOCUMENT", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("STUFFING CARGO RETURN FACTORY", "STUFFINGCARGORETURNFACTORY", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("STUFFING CARGO IN CONTAINER", "STUFFINGCARGOINCONTAINER", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("SLIP BOOKING - ROWS BOOKING", "SLIPBOOKING_ROWSBOOKING", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("KPI STUFFING CARGO", "KPISTUFFINGCARGO", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("RECEIVING CONTAINER AVAILABLE", "RECEIVINGCONTAINERAVAILABLE", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("OSD MANAGEMENT", "OSDMANAGEMENT", "Im_Export")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("DECLARE TRANSPORT DECLARATION", "DECLARETRANSPORTDECLARATION", "Im_Export")
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" ">
+                            <a href="#REPORTS" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                <svg class="svg-icon" id="p-dash7" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                                <span class="ml-4">REPORTS</span>
+                                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="10 15 15 20 20 15"></polyline>
+                                    <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                                </svg>
+                            </a>
+                            <ul id="REPORTS" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">
+                                    @Html.ActionLink("GENERAL CARGO IN WH", "GENERALCARGOINWH", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CONTAINER STUFF FROM...TO", "CONTAINERSTUFFFROMTO", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CLP WITH CONST/SEAL", "CLPWITHCONTS_SEAL", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PRINT CARGO RECEIPT", "PRINTCARGORECEIPT", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("EDIT/DELETE RECORD IN DATA", "EDIT_DELETERECORDINDATA", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("UPDATE BOOKING CBM", "UPDATEBOOKINGCBM", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PRINT PACKINGLIST VESSEL", "PRINTPACKINGLISTVESSEL", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("DAILY REPORT FOR SAPPO", "DAILYREPORTFORSAPPO", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("FACTORY FORECAST AND PLAN OUT", "FACTORYFORECASTANDPLANOUT", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PRINT PALLET LABLE", "PRINTPALLETLABLE", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("LOCATION CARGO IN WH", "LOCATIONCARGOINWH", "Report")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("OVERTIME REPORT", "OVERTIMEREPORT", "Report")
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" ">
+                            <a href="#SYSTEM" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                <svg class="svg-icon" id="p-dash7" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                                <span class="ml-4">SYSTEM</span>
+                                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="10 15 15 20 20 15"></polyline>
+                                    <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                                </svg>
+                            </a>
+                            <ul id="SYSTEM" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="">                                    
+                                        @Html.ActionLink("RECONCILE TBS WMS - BMS", "RECONCILETBSWMSBMS", "System")
+                                </li>
+                                <li class="">
+                                        @Html.ActionLink("CONTAINER SHIPPING LIST", "CONTAINERSHIIPINGLIST", "System") 
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("ONBOARD NOTICE", "ONBOARDNOTICE", "System")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CUSTOMS DECLARATION SHEET NO. CHECK", "CUSTOMSDECLARATIONSHEET", "System")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CHANGE PASSWORD", "CHANGEPASSWORD", "System")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("ADD USER", "ADDUSER", "System")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("DIVISION ON WORKS", "DIVISIONONWORKS", "System")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("PRODUCTIVITY COMBINE", "PRODUCTIVITYCOMBINE", "System")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("JOB DUSTRIBUTE", "JOBDUSTRIBUTE", "System")
+                                </li>
+                                <li class="">
+                                    @Html.ActionLink("CHECK CONTAINER RE_BACK", "CHECKCONTAINERREBACK", "System")
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+
+            </div>
+        </div>
+    </div>
+     <div class="container">
+            @RenderBody()
+        </div>
+
+    <!-- Backend Bundle JavaScript -->
+    <script src=" ~/Content/assets/js/backend-bundle.min.js"></script>
+
+    <!-- Table Treeview JavaScript -->
+    <script src="~/Content/assets/js/table-treeview.js"></script>
+
+    <!-- Chart Custom JavaScript -->
+    <script src="~/Content/assets/js/customizer.js"></script>
+
+    <!-- Chart Custom JavaScript -->
+    <script async src="~/Content/assets/js/chart-custom.js"></script>
+
+    <!-- app JavaScript -->
+    <script src="~/Content/assets/js/app.js"></script>
+</body>
+</html>
